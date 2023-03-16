@@ -2,14 +2,18 @@ name: Symfony
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - 'ph-codific/i18n-FR:trans_2'
 
 permissions:
   contents: read
 
 jobs:
+  clone-owasp-samm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Owasp SAMM
+        run: sh scripts/clone_owasp_samm.sh
   generate-pdf:
     runs-on: ubuntu-latest
     steps:
