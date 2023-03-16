@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run intial steps setup
-        - extends: initial_setup.run.steps
+        extends: initial_setup.run.steps
       - name: Clone Owasp SAMM
         run: sh scripts/clone_owasp_samm.sh
 
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Run intial steps setup
-      - extends: initial_setup.run.steps
+      extends: initial_setup.run.steps
     - name: Create Database
       run: sh scripts/generate_pdf.sh
     - uses: actions/upload-artifact@v3
