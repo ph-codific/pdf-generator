@@ -30,7 +30,7 @@ jobs:
             ${{ runner.os }}-php-
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      -name: Symfony Runtime
+      - name: Symfony Runtime
         run: composer require symfony/runtime
       - name: Clone Owasp SAMM
         run: sh scripts/clone_owasp_samm.sh
