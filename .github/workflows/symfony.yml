@@ -3,7 +3,7 @@ name: Symfony
 on:
   push:
     branches:
-      - '*'
+      - 'ph-codific/i18n-FR'
   workflow_dispatch:
 
 permissions:
