@@ -24,10 +24,7 @@ jobs:
         with:
           repository: ph-codific/i18n-FR
           ref: ${{ github.event.ref }}
-      - name: Verify branch
-        run: |
-          ls
-          echo "The current branch is $(git branch --show-current)"
+          fetch-depth: 0
       - name: Cache Composer packages
         id: composer-cache
         uses: actions/cache@v3
