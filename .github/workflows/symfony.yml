@@ -5,14 +5,31 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      keep_alive:
+        description: 'docker keep alive'
+        required: true
+        default: 0
+      url:
+        description: 'The url of the repo'
+        required: true
+        default: https://github.com/owaspsamm/core.git
+      branch:
+        description: 'branch of the repo'
+        required: true
+        default: main
+      model:
+        description: 'the model'
+        required: false
+        default: 'model'
+      language:
+        description: 'the language'
+        required: false
+        default: 'en'
 
 permissions:
   contents: read
-
-inputs:
-  custom_param:
-    description: Custom input parameter
-    required: true
 
 jobs:
   generate-pdf:
