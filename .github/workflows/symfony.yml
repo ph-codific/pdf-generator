@@ -9,6 +9,11 @@ on:
 permissions:
   contents: read
 
+inputs:
+  custom_param:
+    description: Custom input parameter
+    required: true
+
 jobs:
   generate-pdf:
     runs-on: ubuntu-latest
@@ -31,7 +36,7 @@ jobs:
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Create Database
-      run: sh scripts/generate_pdf.sh
+      run: sh scripts/generate_pdf.sh -u ${{ inputs.custom_param }}
     - uses: actions/upload-artifact@v3
       with:
         name: samm.pdf
