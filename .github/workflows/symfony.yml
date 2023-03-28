@@ -21,8 +21,8 @@ on:
         default: trans_2.0
       model:
         description: 'the model'
-        required: false
-        default:
+        required: true
+        default: model
       language:
         description: 'the language'
         required: true
