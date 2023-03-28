@@ -18,14 +18,14 @@ on:
       branch:
         description: 'branch of the repo'
         required: true
-        default: main
+        default: develop
       model:
         description: 'the model'
-        required: false
+        required: true
         default: 'model'
       language:
         description: 'the language'
-        required: false
+        required: true
         default: 'en'
 
 permissions:
