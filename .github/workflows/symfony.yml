@@ -55,7 +55,7 @@ jobs:
     - name: Print Given Inputs
       run: echo "-a ${{ inputs.keep_alive }} -u ${{ inputs.url }} -b ${{ inputs.branch }} -m ${{ inputs.model }}-l ${{ inputs.language }}"
     - name: Create Database
-      run: sh scripts/generate_pdf.sh -a ${{ inputs.keep_alive }} -u ${{ inputs.url }} -b ${{ inputs.branch }} -m ${{ inputs.model }} -l ${{ inputs.language }}
+      run: sh scripts/generate_pdf.sh -a ${{ inputs.keep_alive }} -u ${{ inputs.url }} -b ${{ inputs.branch }} -l ${{ inputs.language }}
     - uses: actions/upload-artifact@v3
       with:
         name: samm.pdf
