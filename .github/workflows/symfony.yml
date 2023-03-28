@@ -21,7 +21,7 @@ on:
         default: develop
       model:
         description: 'the model'
-        required: true
+        required: false
         default: 'model'
       language:
         description: 'the language'
