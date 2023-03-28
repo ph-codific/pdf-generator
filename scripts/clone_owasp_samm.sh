@@ -30,6 +30,7 @@ if [ ! -d "private/$filename" ]; then
     cd private
     echo "Cloning project $GITHUB_REPO"
     git clone "$GITHUB_REPO"
+    echo "CURRENT PWD" pwd
     echo "git checkout $BRANCH"
     git checkout "$BRANCH"
     cd ..
@@ -37,6 +38,7 @@ else
   cd "private/$filename"
   echo 'Discarding local changes to OWASP SAMM model (if any)...'
   echo "git checkout $BRANCH"
+  echo "CURRENT PWD discarding" pwd
   git checkout "$BRANCH"
   echo 'Pulling latest changes...'
   git pull
