@@ -4,3 +4,6 @@ author: "SAMM core team"
 runs:
   using: "docker"
   image: "Dockerfile"
+branding:
+  icon: 'box'
+  color: 'blue'
