@@ -25,6 +25,7 @@ on:
         default: model
       language:
         description: 'the language'
+        default:
 
 permissions:
   contents: read
