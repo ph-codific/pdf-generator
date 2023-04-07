@@ -27,8 +27,14 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker/whalesay:latest'
+  image: 'php:8.1'
+  env:
+    KEEP_ALIVE: ${{ inputs.keep_alive }}
+    URL: ${{ inputs.url }}
+    BRANCH: ${{ inputs.branch }}
+    MODEL: ${{ inputs.model }}
+    LANGUAGE: ${{ inputs.language }}
   entrypoint: 'sh'
   args:
     - '-c'
-    - 'sh scripts/generate_pdf.sh -a ${{ inputs.keep_alive }} -u ${{ inputs.url }} -b ${{ inputs.branch }} -l ${{ inputs.language }}'
+    - 'apt-get update && apt-get install -y git && git clone $URL /app && cd /app && git checkout $BRANCH && php -d memory_limit=-1 /app/generate_pdf.php $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
