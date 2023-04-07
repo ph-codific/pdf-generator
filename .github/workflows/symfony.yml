@@ -1,10 +1,6 @@
 name: Symfony
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
     inputs:
       keep_alive:
@@ -52,7 +48,7 @@ jobs:
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Create Database
-      run: sh scripts/generate_pdf.sh -a ${{ inputs.keep_alive }} -u ${{ inputs.url }} -b ${{ inputs.branch }} -l ${{ inputs.language }}
+      run: sh scripts/generate_pdf.sh -a ${{ github.event.inputs.keep_alive }} -u ${{ github.event.inputs.url }} -b ${{ github.event.inputs.branch }} -l ${{ github.event.inputs.language }}
     - uses: actions/upload-artifact@v3
       with:
         name: samm.pdf
