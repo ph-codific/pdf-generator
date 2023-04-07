@@ -27,7 +27,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://shivammathur/setup-php@2cb9b829437ee246e9b3cac53555a39208ca6d28'
+  image: 'docker://php:8.1'
   env:
     KEEP_ALIVE: ${{ inputs.keep_alive }}
     URL: ${{ inputs.url }}
