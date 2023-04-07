@@ -1,6 +1,34 @@
 name: "SAMM PDF generator creator"
 description: "Create the SAMM PDF from model files"
 author: "SAMM core team"
+branding:
+  icon: 'package'
+  color: 'blue'
+
+inputs:
+  keep_alive:
+    description: 'Docker keep alive'
+    required: true
+    default: '1'
+  url:
+    description: 'The URL of the repository'
+    required: true
+  branch:
+    description: 'The branch of the repository'
+    required: true
+    default: 'main'
+  model:
+    description: 'The model'
+    required: true
+    default: 'model'
+  language:
+    description: 'The language'
+    default: 'en'
+
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: 'docker'
+  image: 'phcodific/pdf-generator:latest'
+  entrypoint: 'sh'
+  args:
+    - '-c'
+    - 'sh scripts/generate_pdf.sh -a ${{ inputs.keep_alive }} -u ${{ inputs.url }} -b ${{ inputs.branch }} -l ${{ inputs.language }}'

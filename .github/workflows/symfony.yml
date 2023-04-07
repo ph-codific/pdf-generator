@@ -11,18 +11,18 @@ on:
       url:
         description: 'The url of the repo'
         required: true
-        default: https://github.com/owaspsamm/i18n-FR.git
+        default: https://github.com/owaspsamm/core
       branch:
         description: 'branch of the repo'
         required: true
-        default: trans_2.0
+        default: main
       model:
         description: 'the model'
         required: true
         default: model
       language:
         description: 'the language'
-        default: fr
+        default: en
 
 #permissions:
 #  contents: read
