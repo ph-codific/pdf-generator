@@ -27,7 +27,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'phcodific/pdf-generator:latest'
+  image: 'docker/whalesay:latest'
   entrypoint: 'sh'
   args:
     - '-c'
