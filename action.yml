@@ -27,7 +27,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'php:8.1'
+  image: 'php:8.1-cli'
   env:
     KEEP_ALIVE: ${{ inputs.keep_alive }}
     URL: ${{ inputs.url }}
@@ -36,5 +36,4 @@ runs:
     LANGUAGE: ${{ inputs.language }}
   entrypoint: 'sh'
   args:
-    - '-c'
     - 'apt-get update && apt-get install -y git && git clone $URL /app && cd /app && git checkout $BRANCH && php -d memory_limit=-1 /app/generate_pdf.php $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
