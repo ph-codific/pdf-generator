@@ -1,7 +1,8 @@
 name: Symfony
 
 on:
-  workflow_dispatch:
+  repository_dispatch:
+    types: [ generate-pdf ]
     inputs:
       keep_alive:
         description: 'docker keep alive'
@@ -23,8 +24,8 @@ on:
         description: 'the language'
         default: fr
 
-permissions:
-  contents: read
+#permissions:
+#  contents: read
 
 jobs:
   generate-pdf:
@@ -53,3 +54,6 @@ jobs:
       with:
         name: samm.pdf
         path: export/SAMM.pdf
+
+# make the workflow reusable action
+runs-on: self-hosted

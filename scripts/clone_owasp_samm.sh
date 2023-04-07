@@ -45,20 +45,9 @@ else
   cd ..
   cd ..
 fi
-echo '-----------------------------------'
-echo '-----------------------------------'
-echo '-----------------------------------'
-echo 'pwd'
-pwd
-echo 'ls'
-ls
-echo 'cd ..'
+
 cd ..
-echo 'ls'
-ls
-echo '-----------------------------------'
-echo '-----------------------------------'
-echo '-----------------------------------'
+
 echo 'Syncing...'
 php bin/console app:sync-from-owasp-samm "$filename" "$MODEL"
 if [ -n "$LANGUAGE" ]; then
