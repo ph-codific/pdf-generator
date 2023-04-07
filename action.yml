@@ -37,5 +37,15 @@ runs:
   entrypoint: 'sh'
   args:
     - '-c'
-    - 'ls'
+    - |
+      mkdir -p /app
+      cp -R /github/workspace /app
+      cp /app/scripts/generate_pdf.sh /app
+      cd /app
+      chmod +x generate_pdf.sh
+      apt-get update && apt-get install -y git
+      git clone $URL /app/my_project && cd /app/my_project && git checkout $BRANCH
+      php -d memory_limit=-1 /app/generate_pdf.sh $MODEL $LANGUAGE
+      cp /app/my_project/export/SAMM.pdf /github/workspace
+    --volume "${{ github.workspace }}:/github/workspace"
 #    - '/app/scripts/generate_pdf.sh $URL $BRANCH $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
