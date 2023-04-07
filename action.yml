@@ -28,6 +28,7 @@ inputs:
 runs:
   using: 'docker'
   image: 'docker://php:8.1'
+  working-directory: ${{ github.workspace }}
   env:
     KEEP_ALIVE: ${{ inputs.keep_alive }}
     URL: ${{ inputs.url }}
@@ -36,4 +37,5 @@ runs:
     LANGUAGE: ${{ inputs.language }}
   entrypoint: 'sh'
   args:
-    - 'apt-get update && apt-get install -y git && git clone $URL /app && cd /app && git checkout $BRANCH && php -d memory_limit=-1 /app/generate_pdf.php $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
+    - '-c'
+    - '/app/scripts/generate_pdf.sh $URL $BRANCH $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
