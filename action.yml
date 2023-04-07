@@ -37,4 +37,5 @@ runs:
   entrypoint: 'sh'
   args:
     - '-c'
-    - '/app/scripts/generate_pdf.sh $URL $BRANCH $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
+    - 'ls'
+#    - '/app/scripts/generate_pdf.sh $URL $BRANCH $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
