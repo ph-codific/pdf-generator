@@ -40,6 +40,7 @@ runs:
     - |
       mkdir /app
       cd ..
+      cd workspace
       ls
 #      cp -R ./* /app
 #      cd /app
