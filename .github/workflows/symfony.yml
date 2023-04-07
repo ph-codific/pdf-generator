@@ -1,8 +1,7 @@
-name: Symfony
+name: pdf-generate-workflow
 
 on:
-  repository_dispatch:
-    types: [ generate-pdf ]
+  workflow_call:
     inputs:
       keep_alive:
         description: 'docker keep alive'
