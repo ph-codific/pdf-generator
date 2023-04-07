@@ -30,8 +30,8 @@ if [ ! -d "private/$filename" ]; then
     cd private
     echo "Cloning project $GITHUB_REPO"
     git clone "$GITHUB_REPO"
-    echo "PWD LOCATION"
-    pwd
+    echo "cd $filename"
+    cd $filename
     echo "git checkout $BRANCH"
     git checkout "$BRANCH"
     cd ..
@@ -39,8 +39,6 @@ else
   cd "private/$filename"
   echo 'Discarding local changes to OWASP SAMM model (if any)...'
   echo "git checkout $BRANCH"
-  echo "PWD LOCATION"
-  pwd
   git checkout "$BRANCH"
   echo 'Pulling latest changes...'
   git pull
@@ -51,7 +49,7 @@ fi
 echo 'Syncing...'
 php bin/console app:sync-from-owasp-samm "$filename" "$MODEL"
 if [ -n "$LANGUAGE" ]; then
-  echo "Syncing from $LANGUAGE..."
+  echo "Syncing from $LANGUAGE/$MODEL..."
   php bin/console app:sync-from-owasp-samm "$filename" "$LANGUAGE/$MODEL" 1
 fi
 
