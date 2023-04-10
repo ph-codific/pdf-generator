@@ -38,9 +38,8 @@ runs:
   args:
     - '-c'
     - |
-      mkdir /app
-      cd ..
       ls
+#      mkdir /app
 #      cp -R ./* /app
 #      cd /app
 #      ls
