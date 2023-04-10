@@ -40,6 +40,8 @@ runs:
     - |
       cd ..
       mkdir app
+      cd app
+      cp -R ./* /app
       ls
 #      mkdir /app
 #      cp -R ./* /app
