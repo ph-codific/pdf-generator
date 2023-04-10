@@ -39,13 +39,10 @@ runs:
     - '-c'
     - |
       mkdir /app
-      cd ..
-      cd workspace
+      cp -R ./* /app
+      cd /app
       ls
-#      cp -R ./* /app
-#      cd /app
-#      ls
-#      chmod +x scripts/generate_pdf.sh
-#      scripts/generate_pdf.sh $KEEP_ALIVE $URL $BRANCH $MODEL $LANGUAGE
-#      cp export/SAMM.pdf /github/workspace
-#    - '/app/scripts/generate_pdf.sh $URL $BRANCH $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
+      chmod +x scripts/generate_pdf.sh
+      scripts/generate_pdf.sh $KEEP_ALIVE $URL $BRANCH $MODEL $LANGUAGE
+      cp export/SAMM.pdf /github/workspace
+    - '/app/scripts/generate_pdf.sh $URL $BRANCH $MODEL $LANGUAGE && cp /app/export/SAMM.pdf /github/workspace'
