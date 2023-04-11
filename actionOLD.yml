@@ -34,7 +34,7 @@ runs:
     BRANCH: ${{ inputs.branch }}
     MODEL: ${{ inputs.model }}
     LANGUAGE: ${{ inputs.language }}
-  entrypoint: 'sh'
+#  entrypoint: 'sh'
   args:
     - '-c'
     - |
