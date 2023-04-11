@@ -39,6 +39,7 @@ runs:
     - '-c'
     - |
       mkdir app
+      cd ..
       ls
 #      cp -R ./* /app
 #      cd /app
