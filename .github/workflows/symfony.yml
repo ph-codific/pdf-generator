@@ -7,7 +7,7 @@ on:
         description: 'docker keep alive'
         required: true
         default: 1
-        type: int
+        type: integer
 #      url:
 #        description: 'The url of the repo'
 #        required: true
