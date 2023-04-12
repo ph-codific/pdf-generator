@@ -50,6 +50,11 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
+      - uses: actions/checkout@v3
+        with:
+          name: owaspsamm/pdf-generator
+#      - name: CD in pulled pdf-generator
+#        run: cd
       - name: Install Dependencies
         run: composer install # -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Test workflow call echo
