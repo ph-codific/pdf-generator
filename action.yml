@@ -34,11 +34,12 @@ runs:
     BRANCH: ${{ inputs.branch }}
     MODEL: ${{ inputs.model }}
     LANGUAGE: ${{ inputs.language }}
-  entrypoint: 'sh'
+#  entrypoint: 'sh'
   args:
     - '-c'
     - |
       mkdir app
+      cd ..
       ls
 #      cp -R ./* /app
 #      cd /app

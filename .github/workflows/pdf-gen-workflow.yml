@@ -1,4 +1,4 @@
-name: pdf-generate-workflow
+name: Symfony
 
 on:
   workflow_dispatch: #workflow_call:
