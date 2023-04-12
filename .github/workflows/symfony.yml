@@ -58,5 +58,5 @@ jobs:
         name: samm.pdf
         path: export/SAMM.pdf
 
-# make the workflow reusable action
-runs-on: self-hosted
+## make the workflow reusable action
+#runs-on: self-hosted
