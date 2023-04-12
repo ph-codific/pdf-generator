@@ -1,7 +1,9 @@
 name: Symfony
 
 on:
-  workflow_call:
+  workflow_dispatch:   #workflow_call:
+    push:
+      branches: [ translations ]
     inputs:
       keep_alive:
         description: 'docker keep alive'
