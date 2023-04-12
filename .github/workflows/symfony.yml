@@ -49,7 +49,7 @@ jobs:
 #      - name: Install Dependencies
 #        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Test workflow call echo
-        run: echo Hello your inputs are -a ${{ github.event.inputs.keep_alive }} -u ${{ github.event.inputs.url }} -b ${{ github.event.inputs.branch }} -l ${{ github.event.inputs.language }}
+        run: echo Hello your inputs are -a ${{ inputs.keep_alive }} -u ${{ github.event.inputs.url }} -b ${{ github.event.inputs.branch }} -l ${{ github.event.inputs.language }}
 #      - name: Create Database
 #        run: sh scripts/generate_pdf.sh -a ${{ github.event.inputs.keep_alive }} -u ${{ github.event.inputs.url }} -b ${{ github.event.inputs.branch }} -l ${{ github.event.inputs.language }}
 #      - uses: actions/upload-artifact@v3
