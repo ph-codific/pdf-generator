@@ -1,7 +1,7 @@
 name: pdf-generate-workflow
 
 on:
-  workflow_call:
+  workflow_dispatch: #workflow_call:
     inputs:
       keep_alive:
         description: 'docker keep alive'
