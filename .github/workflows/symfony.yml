@@ -2,11 +2,11 @@ name: Symfony_workflow
 
 on:
   workflow_call:
-#    inputs:
-#      keep_alive:
-#        description: 'docker keep alive'
-#        required: true
-#        default: 1
+    inputs:
+      keep_alive:
+        description: 'docker keep alive'
+        required: true
+        default: 1
 #      url:
 #        description: 'The url of the repo'
 #        required: true
