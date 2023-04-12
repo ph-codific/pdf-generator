@@ -1,4 +1,4 @@
-name: Symfony
+name: Symfony_workflow
 
 on:
   push:
