@@ -1,9 +1,11 @@
 name: Symfony
 
 on:
-  workflow_dispatch:   #workflow_call:
-    push:
-      branches: [ translations ]
+  push:
+    branches: [ translations ]
+  #workflow_call:
+  workflow_dispatch: # allows manual trigger from github actions
+
     inputs:
       keep_alive:
         description: 'docker keep alive'
