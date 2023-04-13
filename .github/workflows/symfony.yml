@@ -51,10 +51,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-php-
 #      - name: Pull pdf-generator repo
-#      - uses: actions/checkout@v2
-#        with:
-#          repository: owaspsamm/pdf-generator
-#          ref: main
+      - uses: actions/checkout@v2
+        with:
+          repository: owaspsamm/pdf-generator
+          ref: main
 #      - name: CD in pulled pdf-generator
 #        run: cd
       - name: Install Dependencies
