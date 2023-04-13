@@ -50,6 +50,7 @@ cd ..
 
 echo 'Syncing...'
 php bin/console app:sync-from-owasp-samm "$filename" "$MODEL"
+echo 'LANGUAGE---------->'$LANGUAGE
 if [ -n "$LANGUAGE" ]; then
   echo "Syncing from $LANGUAGE/$MODEL..."
   php bin/console app:sync-from-owasp-samm "$filename" "$LANGUAGE/$MODEL" 1
