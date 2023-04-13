@@ -52,7 +52,7 @@ jobs:
             ${{ runner.os }}-php-
       - uses: actions/checkout@v2
         with:
-          repository: owaspsamm/pdf-generator
+          repository: ph-codific/pdf-generator
           ref: main
       - name: Install Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
