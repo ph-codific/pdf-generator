@@ -50,9 +50,11 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
-      - uses: actions/checkout@v3
+      - name: Pull pdf-generator repo
+      - uses: actions/checkout@v2
         with:
-          name: owaspsamm/pdf-generator
+            repository: owaspsamm/pdf-generator
+            ref: main
 #      - name: CD in pulled pdf-generator
 #        run: cd
       - name: Install Dependencies
