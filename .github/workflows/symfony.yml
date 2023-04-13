@@ -50,15 +50,12 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
-#      - name: Pull pdf-generator repo
       - uses: actions/checkout@v2
         with:
           repository: owaspsamm/pdf-generator
           ref: main
-#      - name: CD in pulled pdf-generator
-#        run: cd
       - name: Install Dependencies
-        run: composer install # -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Test workflow call echo
         run: echo Hello your inputs are -a ${{ inputs.keep_alive }} -u ${{ inputs.url }} -b ${{ inputs.branch }} -l ${{ inputs.language }}
       - name: Create Database
